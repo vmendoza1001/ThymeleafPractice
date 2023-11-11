@@ -10,15 +10,25 @@
 
 <form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
 
-  First name: <input type="text" th:field="*{firstName}">
+    First name: <input type="text" th:field="*{firstName}">
 
-  <br><br>
+    <br><br>
 
-  Lastname name: <input type="text" th:field="*{lastName}">
+    Lastname name: <input type="text" th:field="*{lastName}">
 
-  <br><br>
+    <br><br>
 
-  <input type="submit" value="Submit"/>
+    Country:
+
+    <select th:field="*{country}">
+
+       <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}" />
+
+    </select>
+
+    <br><br>
+
+    <input type="submit" value="Submit"/>
 
 
 </form>
